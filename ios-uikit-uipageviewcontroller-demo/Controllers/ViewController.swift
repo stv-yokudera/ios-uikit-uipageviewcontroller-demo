@@ -8,12 +8,14 @@
 
 import UIKit
 
-class ViewController : UIViewController {
+final class ViewController : UIViewController {
     
-    private var pageViewController:UIPageViewController!
+    private var pageViewController: UIPageViewController!
     private var dataSource = PageViewProvider()
     private var imageFiles = Photos.findAll()
     private var pageIndex = 0
+    
+    // MARK: - view life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +65,7 @@ class ViewController : UIViewController {
     }
 }
 
-//MARK:-UIPageViewControllerDelegate
+// MARK: - UIPageViewControllerDelegate
 extension ViewController: UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController,
@@ -77,4 +79,3 @@ extension ViewController: UIPageViewControllerDelegate {
         }
     }
 }
-
